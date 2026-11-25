@@ -191,6 +191,66 @@
   .opt:disabled{opacity:.35;cursor:not-allowed}
   .tiltnote{font-size:13px;font-weight:900;color:var(--purple);margin:6px 0 10px}
 
+  /* ---- 三排觀眾 / 路人 / 黑粉 ---- */
+  .frow.back{bottom:150px;opacity:.62;padding:0 3%}
+  .frow.mid{bottom:72px;opacity:.82;padding:0 6%}
+  .frow.back .fan{width:11%}
+  .frow.mid .fan{width:15%}
+  .lightsea{position:absolute;left:0;right:0;bottom:175px;height:70px;opacity:.55;background-image:radial-gradient(circle,#ff8ac2 0 2px,transparent 3px),radial-gradient(circle,#7ce0ff 0 2px,transparent 3px),radial-gradient(circle,#ffd36e 0 1.5px,transparent 2.5px);background-size:17px 13px,23px 17px,13px 19px;background-position:0 0,8px 5px,4px 9px;animation:twinkle 1.1s ease-in-out infinite alternate}
+  @keyframes twinkle{to{opacity:.25}}
+  .banner{position:absolute;left:50%;top:10px;transform:translateX(-50%) rotate(-2deg);background:linear-gradient(90deg,#ff5fa2,#b28bff);color:#fff;font-size:12px;font-weight:900;padding:5px 14px;border-radius:6px;white-space:nowrap;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .fan .pDown,.fan .eB,.fan .eA,.fan .mF,.fan .mS{display:none}
+  .fan.passer .pUp,.fan.passer .eN,.fan.passer .mN{display:none}
+  .fan.passer .pDown,.fan.passer .eB,.fan.passer .mF{display:inline}
+  .fan.passer{animation:none}
+  .fan.love .eB,.fan.love .eA,.fan.love .mF{display:none}
+  .fan.love .mN{display:inline}
+  .fan.anti .eN,.fan.anti .mN,.fan.anti .eL{display:none}
+  .fan.anti .eA,.fan.anti .mS{display:inline}
+  .fan.anti{animation:shake .2s infinite}
+  .fan.target{cursor:pointer}
+  .fan.target::after{display:none}
+  .fan.target:hover{filter:brightness(1.25) drop-shadow(0 0 6px #ffd36e)}
+  .fan .sign i{font-style:normal;font-size:.85em;margin-left:2px}
+  .fan .sign.bad{background:#2b1d3a;color:#ff6b6b;box-shadow:0 2px 0 #000}
+  .frow.back .sign{font-size:8px;padding:2px 3px}
+  .frow.mid .sign{font-size:9.5px}
+  .tomato{position:absolute;z-index:9;font-size:30px;pointer-events:none;animation:toss .5s ease-in forwards}
+  @keyframes toss{to{left:50%;top:85%;font-size:90px;transform:translate(-50%,-50%) rotate(540deg)}}
+  .splat{position:absolute;inset:0;z-index:9;pointer-events:none;display:flex;align-items:center;justify-content:center}
+  .splat span{font-size:160px;filter:drop-shadow(0 0 0 #e33) blur(.3px);animation:splat 1.3s ease forwards}
+  @keyframes splat{0%{transform:scale(1.6) rotate(-10deg);opacity:1}60%{opacity:.9}100%{transform:scale(1.3) translateY(60px) rotate(-10deg);opacity:0}}
+  .stage.chaos{animation:shake .12s infinite}
+  .stage.chaos .fan{animation:run .45s ease-in-out infinite alternate!important}
+  @keyframes run{to{transform:translate(var(--cx),-12px) rotate(var(--cr))}}
+  /* ---- 節奏比心 ---- */
+  .track{position:relative;height:66px;border-radius:16px;background:linear-gradient(90deg,#fff0f7,#f1eaff);overflow:hidden;box-shadow:inset 0 0 0 2px #eadcf5;margin-bottom:10px}
+  .track .zone{position:absolute;left:18%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;border:3px dashed var(--pink);box-shadow:0 0 14px rgba(255,95,162,.45)}
+  .note{position:absolute;left:-22px;top:50%;margin-top:-22px;width:44px;height:44px;font-size:28px;line-height:44px;text-align:center;will-change:transform;white-space:nowrap}
+  .note.hit{animation:nhit .35s forwards}
+  @keyframes nhit{to{opacity:0;font-size:56px}}
+  .note.miss{opacity:.25!important;filter:grayscale(1)}
+  .judge{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-weight:900;font-size:18px;opacity:0}
+  .judge.show{animation:jshow .6s}
+  @keyframes jshow{0%{opacity:0;transform:translateY(-50%) scale(1.6)}20%{opacity:1;transform:translateY(-50%) scale(1)}80%{opacity:1}100%{opacity:0}}
+  .judge.pf{color:var(--pink)} .judge.gd{color:var(--purple)} .judge.miss{color:#999}
+  button.hitbtn{width:100%;flex:none;font-size:20px;padding:18px 0;touch-action:manipulation;user-select:none}
+  /* ---- 蓄力飛吻 ---- */
+  .meter{position:relative;height:18px;border-radius:99px;background:#f0e8f7;overflow:hidden;margin:2px 0 4px}
+  .meter .sweet{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(-45deg,#ff8ac2 0 6px,#ffb3d1 6px 12px);opacity:.75}
+  .meter i{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,#b28bff,#7b5cff);border-radius:99px;box-shadow:0 0 8px #7b5cff}
+  .meter i.in{background:linear-gradient(90deg,#ff5fa2,#ff2d6f);box-shadow:0 0 10px #ff2d6f}
+  .kq{font-size:13px;font-weight:900;color:var(--pink);min-height:18px}
+  button.kissbtn{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+  button.kissbtn.charging{animation:charge .12s infinite alternate;box-shadow:0 0 0 14px rgba(255,45,111,.35),0 0 40px #ff5fa2}
+  @keyframes charge{to{transform:scale(1.12) rotate(3deg)}}
+  /* ---- 狂點條 ---- */
+  .mbar{position:relative;height:10px;border-radius:99px;background:rgba(255,255,255,.3);margin-top:8px;overflow:visible}
+  .mbar i{position:absolute;left:0;top:0;bottom:0;width:0;background:#fff;border-radius:99px;opacity:.6}
+  .mbar i.ok{background:#ffd36e;opacity:1}
+  .mbar .mmin{position:absolute;top:-4px;bottom:-4px;width:3px;background:#2b1d3a;border-radius:2px}
+  .mash .cnt b{font-size:22px}
+
   /* ---- 結算 ---- */
   .result .rname{font-weight:900;font-size:22px;margin-top:8px}
   .rtier{display:inline-block;margin-top:6px;background:linear-gradient(90deg,var(--pink),var(--purple));color:#fff;font-weight:900;padding:5px 14px;border-radius:99px}
@@ -632,7 +692,7 @@ const ACTIONS={
   heart: {name:'花式比心',    icon:'🫶', lo:8,  hi:14, limit:5,  w:.6}, // 每局最多 1~2 次
   point: {name:'指向粉絲',    icon:'👉', lo:13, hi:22, limit:5,  w:1},
   selfie:{name:'粉絲手機自拍',icon:'🤳', lo:20, hi:30, limit:10, w:1},
-  kiss:  {name:'隔空飛吻',    icon:'😘',               limit:3,  w:.7},
+  kiss:  {name:'隔空飛吻',    icon:'😘',               limit:4,  w:.7},
 };
 const BONUS={sign:[7,10], heart:[11,14], point:[5,8], selfie:[5,8]}; // 飛吻後選擇的加成 %
 const KISS_CHOICE_LIMIT=4;
@@ -660,23 +720,35 @@ function fanSVG(){
   const heart=x=>`<path d="M${x} 40 l-4 -4 a2.4 2.4 0 0 1 4 -3 a2.4 2.4 0 0 1 4 3z" fill="#ff2d6f"/>`;
   return `<svg viewBox="0 0 60 100">${back}
    <path d="M10 100 Q12 64 30 62 Q48 64 50 100Z" fill="${sh}"/>
-   <path d="M15 72 L8 86" stroke="${s}" stroke-width="6" stroke-linecap="round"/>
-   <path d="M44 70 L53 44" stroke="${s}" stroke-width="6" stroke-linecap="round"/>
-   <rect x="50" y="20" width="6" height="26" rx="3" fill="#eee"/>
-   <circle cx="53" cy="18" r="9" fill="${k}" opacity=".35"/><circle cx="53" cy="18" r="5.5" fill="${k}"/>
+   <g class="pUp"><path d="M15 72 L8 86" stroke="${s}" stroke-width="6" stroke-linecap="round"/>
+     <path d="M44 70 L53 44" stroke="${s}" stroke-width="6" stroke-linecap="round"/>
+     <rect x="50" y="20" width="6" height="26" rx="3" fill="#eee"/>
+     <circle cx="53" cy="18" r="9" style="fill:var(--stk,${k})" opacity=".35"/><circle cx="53" cy="18" r="5.5" style="fill:var(--stk,${k})"/></g>
+   <g class="pDown"><path d="M15 76 Q30 84 45 76" stroke="${s}" stroke-width="7" fill="none" stroke-linecap="round"/>
+     <rect x="33" y="64" width="9" height="15" rx="2" fill="#2b2b33"/><rect x="34.5" y="66" width="6" height="10" fill="#7ce0ff" opacity=".7"/></g>
    <circle cx="30" cy="36" r="16" fill="${s}"/>
    <path d="M14 34 Q15 17 30 17 Q45 17 46 34 Q39 25 30 27 Q21 25 14 34Z" fill="${h}"/>
    <g class="eN"><circle cx="24" cy="37" r="2.3" fill="#2b1d3a"/><circle cx="36" cy="37" r="2.3" fill="#2b1d3a"/></g>
+   <g class="eB"><path d="M21 37 h6 M33 37 h6" stroke="#2b1d3a" stroke-width="2.2" stroke-linecap="round"/></g>
+   <g class="eA"><path d="M20 33 L27 35 M40 33 L33 35" stroke="#2b1d3a" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="38" r="2" fill="#2b1d3a"/><circle cx="36" cy="38" r="2" fill="#2b1d3a"/></g>
    <g class="eL">${heart(24)}${heart(36)}</g>
    <ellipse cx="21" cy="43" rx="3" ry="1.8" fill="#ff8fb1" opacity=".6"/><ellipse cx="39" cy="43" rx="3" ry="1.8" fill="#ff8fb1" opacity=".6"/>
-   <path d="M27 44 Q30 47 33 44" fill="none" stroke="#b24a5e" stroke-width="1.6" stroke-linecap="round"/></svg>`;
+   <path class="mN" d="M27 44 Q30 47 33 44" fill="none" stroke="#b24a5e" stroke-width="1.6" stroke-linecap="round"/>
+   <path class="mF" d="M27 45 h6" stroke="#b24a5e" stroke-width="1.6" stroke-linecap="round"/>
+   <path class="mS" d="M26 45 Q31 46 35 42" fill="none" stroke="#b24a5e" stroke-width="1.8" stroke-linecap="round"/></svg>`;
 }
 function buildCrowd(){
   const c=$('crowd');
-  c.innerHTML=`<div class="beam" style="left:6%;transform:rotate(18deg)"></div><div class="beam" style="right:6%;transform:rotate(-18deg)"></div><div class="frow back" id="rowBack"></div><div class="frow front" id="rowFront"></div>`;
-  for(let i=0;i<7;i++) $('rowBack').insertAdjacentHTML('beforeend',`<div class="fan" style="animation-delay:${-Math.random()}s">${fanSVG()}</div>`);
-  for(let i=0;i<5;i++) $('rowFront').insertAdjacentHTML('beforeend',`<div class="fan" style="animation-delay:${-Math.random()}s">${fanSVG()}</div>`);
+  c.innerHTML=`<div class="beam" style="left:6%;transform:rotate(18deg)"></div><div class="beam" style="right:6%;transform:rotate(-18deg)"></div>
+    <div class="lightsea"></div><div class="banner">💗 ${esc(G.name)} 💗 我們永遠支持你！</div>
+    <div class="frow back" id="rowBack"></div><div class="frow mid" id="rowMid"></div><div class="frow front" id="rowFront"></div>`;
+  [['rowBack',8],['rowMid',6],['rowFront',5]].forEach(([id,n])=>{
+    for(let i=0;i<n;i++) $(id).insertAdjacentHTML('beforeend',`<div class="fan" style="animation-delay:${-Math.random()}s">${fanSVG()}</div>`);
+  });
+  // 幾位冷漠路人：不揮應援棒、雙手抱胸滑手機
+  shuffle([...c.querySelectorAll('.fan')]).slice(0,3).forEach(f=>f.classList.add('passer'));
 }
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 
 /* --- 特效 --- */
 function stagePos(el){ const s=$('stage').getBoundingClientRect(), r=el.getBoundingClientRect(); return {x:r.left-s.left+r.width/2, y:r.top-s.top+r.height/2}; }
@@ -719,7 +791,7 @@ function updateTimer(){
 
 function startStage(){
   const name=$('name').value.trim(), idol=current.idol;
-  G={score:0,t:ROUND,running:false,act:null,bonus:null,forced:null,name,idol,sec:current.sec,crisisPlan:[['choice','mash','catch'].sort(()=>Math.random()-.5)].map(t=>[[rint(7,12),t[0]],[rint(21,27),t[1]]])[0],crisisIdx:0,crises:[],heartMax:rint(1,2),heartCount:0,sigStart:0,
+  G={score:0,t:ROUND,running:false,act:null,bonus:null,forced:null,name,idol,sec:current.sec,crisisPlan:(t=>[[rint(7,12),t[0]],[rint(21,27),t[1]]])(shuffle(['choice','mash','catch'])),kissQ:null,crisisIdx:0,crises:[],heartMax:rint(1,2),heartCount:0,sigStart:0,
      stats:{sign:[0,0],heart:[0,0],point:[0,0],selfie:[0,0],kiss:[0,0]}};
   $('hudImg').style.display=idol.photo?'':'none'; if(idol.photo) $('hudImg').src=idol.photo;
   $('hudName').innerHTML=`${esc(name)}<small>${idol.type}・${idol.arch}</small>`;
@@ -829,35 +901,81 @@ const RUN={
   },
 
   heart(A,bp){
-    setPanel(`${A.icon} ${A.name}`,`<div class="hint">${A.limit} 秒內選一種比心！越快粉絲越嗨</div><div class="opts">
-      <button class="opt"><span class="em">🫰</span>手指愛心</button>
-      <button class="opt"><span class="em">🫶</span>雙手大愛心</button>
-      <button class="opt"><span class="em">☺️💗</span>臉頰愛心</button></div>`,bp);
-    actTimer(A.limit,()=>fail('比心比太慢，粉絲等不及了'));
-    const t0=performance.now();
-    $('panel').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
-      if(G.act.done) return;
-      const el=(performance.now()-t0)/1000;
-      gesture(b.querySelector('.em').textContent);
-      award('heart',1-el/A.limit*0.9);
-    });
+    const types=[['🫰','手指愛心'],['🫶','雙手大愛心'],['☺️💗','臉頰愛心']];
+    setPanel(`${A.icon} ${A.name}`,`<div class="hint">愛心滑進圈圈的瞬間按「比心！」抓準節拍 💗</div>
+      <div class="track" id="trk"><div class="zone"></div><div id="notes"></div><div class="judge" id="judge"></div></div>
+      <button class="go hitbtn" id="hit">💗 比心！</button>`,bp);
+    const trk=$('trk'), W=trk.clientWidth, zoneX=W*0.18, speed=W*0.55;
+    const t0=performance.now()/1000;
+    const notes=[1.3,2.45,3.6].map(t=>({t:t+(Math.random()-.5)*0.25, type:pickA(types), res:null}));
+    notes.forEach(n=>{ n.el=document.createElement('div'); n.el.className='note'; n.el.textContent=n.type[0]; $('notes').appendChild(n.el); });
+    let perfect=0, good=0, over=false;
+    const judge=(txt,cls)=>{ const j=$('judge'); j.textContent=txt; j.className='judge '+cls; void j.offsetWidth; j.classList.add('show'); };
+    const end=()=>{ if(over) return; over=true;
+      if(!perfect&&!good) return fail('節拍全部 miss，粉絲好尷尬');
+      award('heart',(perfect+good*0.6)/notes.length,null,`Perfect ${perfect}・Good ${good}`); };
+    actTimer(A.limit,end);
+    const frame=()=>{
+      if(over||G.act.done) return;
+      const now=performance.now()/1000-t0;
+      notes.forEach(n=>{ if(n.res) return; const x=zoneX+(n.t-now)*speed;
+        n.el.style.transform=`translateX(${x}px)`; n.el.style.opacity=x>W+24?0:1;
+        if(now-n.t>0.22){ n.res='miss'; n.el.classList.add('miss'); judge('MISS','miss'); } });
+      if(notes.every(n=>n.res)) return setTimeout(end,250);
+      requestAnimationFrame(frame);
+    };
+    requestAnimationFrame(frame);
+    $('hit').onpointerdown=e=>{ e.preventDefault(); if(over||G.act.done) return;
+      const now=performance.now()/1000-t0;
+      const n=notes.filter(n=>!n.res).sort((a,b)=>Math.abs(a.t-now)-Math.abs(b.t-now))[0]; if(!n) return;
+      const d=Math.abs(n.t-now);
+      if(d<=0.09){ n.res='perfect'; perfect++; judge('PERFECT!','pf'); }
+      else if(d<=0.2){ n.res='good'; good++; judge('GOOD','gd'); }
+      else if(d<=0.45){ n.res='miss'; n.el.classList.add('miss'); judge(now<n.t?'太早了！':'太慢了！','miss'); return; } // 亂按會被判 miss
+      else return;
+      n.el.classList.add('hit'); gesture(n.type[0]); hearts(n.res==='perfect'?6:3); loveRandom(1);
+    };
   },
 
   point(A,bp){
-    setPanel(`${A.icon} ${A.name}`,`<div class="hint">突然伸出食指＋酷帥挑眉點頭 😏<br>${A.limit} 秒內點一位前排粉絲指過去！<br>舉牌的粉絲最想被你指到</div><div style="font-size:54px;margin-top:4px">👉😏</div>`,bp);
-    const fans=[...document.querySelectorAll('#rowFront .fan')], lucky=pickA(fans);
-    lucky.insertAdjacentHTML('beforeend',`<div class="sign">${pickA(['看我看我！','指我指我！','💗 '+esc(G.name)+' 💗','我愛你！'])}</div>`);
-    fans.forEach(f=>f.classList.add('target'));
+    setPanel(`${A.icon} ${A.name}`,`<div class="hint">突然伸出食指＋酷帥挑眉點頭 😏<br>${A.limit} 秒內從三排觀眾裡挑一位指過去！<br>舉牌的鐵粉最想被指到…但小心<b>假裝成粉絲的黑粉</b></div><div style="font-size:48px;margin-top:2px">👉😏</div>`,bp);
+    const all=[...document.querySelectorAll('#crowd .fan')];
+    const cands=shuffle(all.filter(f=>!f.classList.contains('passer')));
+    const loyal=cands.slice(0,2), anti=cands.slice(2,4);
+    const N=esc(G.name);
+    const loyalTxt=['💗 '+N+' 💗','看我看我！','指我指我！','我愛你！','嫁給我！'];
+    // 黑粉的偽裝：牌子幾乎一樣，破綻是 🤞、暗色應援棒，或標語後半句不對勁
+    const antiTxt=['💗 '+N+' 💗<i>🤞</i>','看我看我！<i>🤞</i>','指我指我！<i>🤞</i>',N+' 我愛你…才怪','看我…跌倒吧','嫁給我…的錢'];
+    loyal.forEach(f=>f.insertAdjacentHTML('beforeend',`<div class="sign">${pickA(loyalTxt)}</div>`));
+    anti.forEach(f=>{ f.insertAdjacentHTML('beforeend',`<div class="sign">${pickA(antiTxt)}</div>`); f.style.setProperty('--stk','#3d3a45'); });
+    all.forEach(f=>f.classList.add('target'));
     const t0=performance.now();
-    const cleanup=()=>{ fans.forEach(f=>{ f.classList.remove('target'); f.onclick=null; }); const s=lucky.querySelector('.sign'); if(s) setTimeout(()=>s.remove(),1400); };
+    const cleanup=()=>{ all.forEach(f=>{ f.classList.remove('target'); f.onclick=null; });
+      setTimeout(()=>{ document.querySelectorAll('#crowd .sign').forEach(s=>s.remove()); anti.forEach(f=>{ f.style.removeProperty('--stk'); f.classList.remove('anti'); }); },1600); };
     actTimer(A.limit,()=>{ cleanup(); fail('手舉在半空中…好尷尬'); });
-    fans.forEach(f=>f.onclick=()=>{
+    all.forEach(f=>f.onclick=()=>{
       if(G.act.done) return;
       const el=(performance.now()-t0)/1000, p=stagePos(f); cleanup();
-      pop('👉',{x:p.x,y:p.y+50},46); swoon(f);
-      const hit=f===lucky;
-      award('point', hit?1:(1-el/A.limit)*0.7, {x:p.x,y:p.y-40});
-      if(hit) pop('正中紅心！',{x:p.x,y:p.y-85},16,'#ffd36e');
+      pop('👉',{x:p.x,y:p.y+40},40);
+      if(anti.includes(f)){                      // 黑粉現形，丟番茄
+        G.act.done=true; G.bonus=null;
+        f.classList.add('anti'); const s=f.querySelector('.sign'); if(s){ s.innerHTML='取消追蹤！👎'; s.classList.add('bad'); }
+        tomato(p);
+        const pts=-rint(8,15); G.score=Math.max(0,G.score+pts); G.stats.point[0]++; G.stats.point[1]+=pts; scoreUI();
+        pop(`是黑粉！被丟番茄 🍅<div style="font-size:30px">${pts}</div>`,{x:p.x,y:p.y-50},18,'#ff7b7b');
+        later(nextAction,1300); return;
+      }
+      if(f.classList.contains('passer')){        // 冷漠路人：分數低，但被圈粉
+        f.classList.remove('passer'); f.classList.add('love'); setTimeout(()=>f.classList.remove('love'),1600);
+        return award('point',0.08,{x:p.x,y:p.y-40},'路人被你圈粉了！');
+      }
+      swoon(f);
+      if(loyal.includes(f)){                     // 鐵粉：直接昏倒，旁邊的人也跟著尖叫
+        const row=[...f.parentNode.children], i=row.indexOf(f);
+        [row[i-1],row[i+1]].filter(Boolean).forEach(n=>{ n.classList.add('love'); setTimeout(()=>n.classList.remove('love'),1600); });
+        return award('point',1,{x:p.x,y:p.y-40},'鐵粉當場昏倒！正中紅心');
+      }
+      award('point',(1-el/A.limit)*0.7,{x:p.x,y:p.y-40});
     });
   },
 
@@ -882,24 +1000,42 @@ const RUN={
   },
 
   kiss(A){
-    setPanel(`${A.icon} ${A.name}`,`<div class="hint">${A.limit} 秒內按下去，對全場送出飛吻！<br>之後可以選下一個動作拿加成</div><button class="kissbtn" id="kb">💋</button>`);
-    actTimer(A.limit,()=>fail('飛吻卡在嘴邊…'));
-    $('kb').onclick=()=>{
-      if(G.act.done) return;
-      G.act.done=true; G.stats.kiss[0]++;
-      gesture('😘'); hearts(14,['💋','💗','😘','💕']); loveRandom(4);
-      later(kissChoice,650);
+    const SW=[72,90]; // 甜蜜區（%）
+    setPanel(`${A.icon} ${A.name}`,`<div class="hint">按住 💋 蓄力，在<b>粉紅色甜蜜區</b>放開！</div>
+      <div class="meter"><div class="sweet" style="left:${SW[0]}%;width:${SW[1]-SW[0]}%"></div><i id="kmeter"></i></div>
+      <div class="kq" id="kq">&nbsp;</div><button class="kissbtn" id="kb">💋</button>`);
+    let holding=false, hs=0, p=0, over=false;
+    const kb=$('kb');
+    const release=()=>{
+      if(over) return; over=true; holding=false; G.act.done=true; kb.classList.remove('charging');
+      const q = p>=SW[0]&&p<=SW[1] ? 1 : clamp(1-Math.min(Math.abs(p-SW[0]),Math.abs(p-SW[1]))/45);
+      G.kissQ=q; G.stats.kiss[0]++;
+      $('kq').textContent=`甜蜜度 ${Math.round(q*100)}%${q===1?'　💯 完美！':''}`;
+      gesture('😘'); hearts(Math.round(6+q*16),['💋','💗','😘','💕']);
+      const fans=shuffle([...document.querySelectorAll('#crowd .fan')]); fans.slice(0,Math.round(1+q*7)).forEach((f,i)=>setTimeout(()=>swoon(f),i*90));
+      pop(`甜蜜度 ${Math.round(q*100)}%`,crowdMid(),24,'#ffd36e');
+      later(kissChoice,900);
     };
+    actTimer(A.limit,()=>{ if(holding) release(); else fail('飛吻卡在嘴邊…'); });
+    const frame=()=>{ if(over) return;
+      if(holding){ const el=(performance.now()-hs)/1000, ph=(el%1.3)/1.3; p=(ph<.5?ph*2:2-ph*2)*100; $('kmeter').style.width=p+'%';
+        $('kmeter').classList.toggle('in',p>=SW[0]&&p<=SW[1]); }
+      requestAnimationFrame(frame); };
+    requestAnimationFrame(frame);
+    kb.onpointerdown=e=>{ e.preventDefault(); if(G.act.done||over) return; holding=true; hs=performance.now(); kb.classList.add('charging'); try{kb.setPointerCapture(e.pointerId);}catch(_){} };
+    kb.onpointerup=kb.onpointercancel=()=>{ if(holding) release(); };
+    kb.oncontextmenu=e=>e.preventDefault();
   }
 };
 function kissChoice(){
-  const keys=['sign','heart','point','selfie'];
-  setPanel('😘 飛吻成功！下一個要做什麼？',`<div class="hint">${KISS_CHOICE_LIMIT} 秒內選好，下一個動作拿專屬加成</div><div class="opts four">${keys.map(k=>{ const off=k==='heart'&&G.heartCount>=G.heartMax; return `<button class="opt" data-k="${k}" ${off?'disabled':''}><span class="em">${ACTIONS[k].icon}</span>${ACTIONS[k].name}<small>${off?'本局已比過心':`加成 +${BONUS[k][0]}~${BONUS[k][1]}%`}</small></button>`; }).join('')}</div>`);
+  const keys=['sign','heart','point','selfie'], q=G.kissQ??0.5;
+  const pctOf=k=>BONUS[k][0]+Math.round((BONUS[k][1]-BONUS[k][0])*q);   // 甜蜜度越高，加成越接近上限
+  setPanel('😘 飛吻成功！下一個要做什麼？',`<div class="hint">${KISS_CHOICE_LIMIT} 秒內選好（甜蜜度 ${Math.round(q*100)}% 決定加成高低）</div><div class="opts four">${keys.map(k=>{ const off=k==='heart'&&G.heartCount>=G.heartMax; return `<button class="opt" data-k="${k}" ${off?'disabled':''}><span class="em">${ACTIONS[k].icon}</span>${ACTIONS[k].name}<small>${off?'本局已比過心':`加成 +${pctOf(k)}%`}</small></button>`; }).join('')}</div>`);
   actTimer(KISS_CHOICE_LIMIT,()=>{ pop('猶豫太久，加成飛走了～',crowdMid(),18,'#d9d2e6'); later(nextAction,700); });
   $('panel').querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
     if(G.act.done) return;
     G.act.done=true;
-    const k=b.dataset.k, pct=rint(...BONUS[k]);
+    const k=b.dataset.k, pct=pctOf(k);
     G.bonus={key:k,pct}; G.forced=k;
     pop(`下一個「${ACTIONS[k].name}」<br>加成 +${pct}%！`,crowdMid(),22,'#ffd36e');
     later(nextAction,800);
@@ -925,12 +1061,16 @@ function crisisPanel(type){
     actTimer(CRISIS_LIMIT,()=>resolveCrisis(type,'bad','愣住太久，被狗仔拍到了'));
     $('panel').querySelectorAll('.copts button').forEach(b=>b.onclick=()=>{ if(!G.act.done) done(b.dataset.o); });
   } else if(type==='mash'){
-    let c=0;
-    setPanel(title, scene+`<button class="mash" id="mash"><span class="em">${ev.icon}</span>${ev.btn}<div class="cnt" id="mcnt">0 / ${ev.n}</div></button>`);
-    actTimer(CRISIS_LIMIT,()=>done(c>=ev.n/2?'ok':'bad'));
-    $('mash').onpointerdown=e=>{ e.preventDefault(); if(G.act.done) return; c++; $('mcnt').textContent=`${c} / ${ev.n}`;
-      $('mash').style.transform=`scale(${0.96+Math.random()*0.06}) rotate(${(Math.random()-.5)*4}deg)`;
-      if(c>=ev.n) done('best'); };
+    // 5 秒內點越多下分數越高；低於 15 下不給分而且現場大亂
+    let c=0; const MIN=15, LIM=5, FULL=35;
+    setPanel(title, scene+`<button class="mash" id="mash"><span class="em">${ev.icon}</span>${ev.btn}<div class="cnt"><b id="mcnt">0</b> 下（至少 ${MIN} 下）</div><div class="mbar"><i id="mbar"></i><span class="mmin" style="left:${MIN/FULL*100}%"></span></div></button>`);
+    actTimer(LIM,()=>{
+      if(c<MIN) resolveCrisis(type,'chaos',null,{pts:0,msg:`只點了 ${c} 下…現場大亂！`});
+      else resolveCrisis(type, c>=30?'best':'good', null, {pts:Math.min(25,5+(c-MIN)), msg:`狂點 ${c} 下，危機化解！${c>=30?'💯':''}`});
+    });
+    $('mash').onpointerdown=e=>{ e.preventDefault(); if(G.act.done) return; c++; $('mcnt').textContent=c;
+      const bar=$('mbar'); bar.style.width=Math.min(100,c/FULL*100)+'%'; bar.classList.toggle('ok',c>=MIN);
+      $('mash').style.transform=`scale(${0.96+Math.random()*0.06}) rotate(${(Math.random()-.5)*4}deg)`; };
   } else {
     let c=0;
     setPanel(title, scene+`<div class="hint" style="font-size:15px">快點掉舞台上的 ${ev.icon}！ <b id="ccnt">0 / ${ev.n}</b></div>`);
@@ -944,16 +1084,32 @@ function crisisPanel(type){
   }
   $('panel').classList.add('alert');
 }
-function resolveCrisis(type,o,why){
+function resolveCrisis(type,o,why,custom){
   G.act.done=true; paparazzi(false);
   document.querySelectorAll('.catchme').forEach(e=>e.remove());
   const r=G.sec.r; let pts,msg,color;
-  if(o==='best'){ pts=rint(10,20); msg='危機化解！反差萌爆棚 💗'; color='#ffd36e'; hearts(12); loveRandom(4); }
+  if(custom){ pts=custom.pts; msg=custom.msg;
+    if(o==='chaos'){ color='#ff7b7b'; chaos(); } else { color='#ffd36e'; hearts(o==='best'?14:8); loveRandom(3); } }
+  else if(o==='best'){ pts=rint(10,20); msg='危機化解！反差萌爆棚 💗'; color='#ffd36e'; hearts(12); loveRandom(4); }
   else if(o==='ok'){ pts=-r*2; msg='勉強過關…粉絲有點疑惑 🤔'; color='#fff'; }
   else { pts=-r*rint(5,8); msg=`${why?why+'！<br>':''}爆雷上熱搜 #${esc(G.name)}出事了 🔥`; color='#ff7b7b'; hearts(10,['💔','🔥','📸']); shutter(3); }
   G.score=Math.max(0,G.score+pts); G.crises.push({type,o,pts}); scoreUI();
   pop(`${msg}<div style="font-size:30px">${pts>0?'+':''}${pts}</div>`,crowdMid(),17,color);
-  later(nextAction,1400);
+  later(nextAction,o==='chaos'?1800:1400);
+}
+// 現場大亂：粉絲亂竄、尖叫、快門狂閃
+function chaos(){
+  const st=$('stage'); st.classList.add('chaos');
+  document.querySelectorAll('#crowd .fan').forEach(f=>{ f.style.setProperty('--cx',(Math.random()-.5)*90+'px'); f.style.setProperty('--cr',(Math.random()-.5)*80+'deg'); });
+  hearts(20,['😱','💥','📸','🔥','💦','🙀']); shutter(4);
+  try{ navigator.vibrate&&navigator.vibrate([60,40,60,40,120]); }catch(e){}
+  setTimeout(()=>st.classList.remove('chaos'),1800);
+}
+// 黑粉丟番茄：番茄飛向鏡頭，砸在畫面上
+function tomato(p){
+  const st=$('stage'), t=document.createElement('div'); t.className='tomato'; t.textContent='🍅';
+  t.style.left=p.x+'px'; t.style.top=p.y+'px'; st.appendChild(t);
+  setTimeout(()=>{ t.remove(); const sp=document.createElement('div'); sp.className='splat'; sp.innerHTML='<span>🍅</span>'; st.appendChild(sp); setTimeout(()=>sp.remove(),1300); },500);
 }
 
 /* --- 狗仔特效：閃光燈、快門聲、獨家跑馬燈、紅色警戒 --- */
@@ -1018,11 +1174,11 @@ function showResult(){
   const g=G, male=g.idol.gender==='男';
   const tiers=[[280,male?'國民天王':'國民天后','全台灣都在喊你的名字！'],[200,'頂流巨星','熱搜第一掛整晚'],[130,'人氣偶像','應援棒亮成一片海'],[60,'新人偶像','開始有人認得你了'],[0,'地下偶像','台下最大聲的是你媽']];
   const t=tiers.find(x=>g.score>=x[0]);
-  let rows=Object.keys(ACTIONS).map(k=>{ const [n,p]=g.stats[k]; return `<tr><td>${ACTIONS[k].icon} ${ACTIONS[k].name}</td><td>${n} 次</td><td>${k==='kiss'?'加成用':'+'+p}</td></tr>`; }).join('');
-  const cName={best:'完美化解',ok:'勉強過關',bad:'爆雷'};
+  let rows=Object.keys(ACTIONS).map(k=>{ const [n,p]=g.stats[k]; return `<tr><td>${ACTIONS[k].icon} ${ACTIONS[k].name}</td><td>${n} 次</td><td>${k==='kiss'?'加成用':(p>=0?'+':'')+p}</td></tr>`; }).join('');
+  const cName={best:'完美化解',good:'化解',ok:'勉強過關',bad:'爆雷',chaos:'現場大亂'};
   g.crises.forEach((c,i)=>{ rows+=`<tr><td>🚨 秘密危機 ${i+1}（${CRISIS_NAME[c.type]}）</td><td>${cName[c.o]}</td><td style="color:${c.pts<0?'#e0405a':'inherit'}">${c.pts>0?'+':''}${c.pts}</td></tr>`; });
   const secT=esc(fmt(g.sec.t,g.idol)), outs=g.crises.map(c=>c.o);
-  const phew= outs.includes('bad') ? `🔥 明天頭條：${secT}` : outs.includes('ok') ? `😅 差一點就穿幫了：${secT}` : `🤫 幸好今天沒人發現：${secT}`;
+  const phew= outs.includes('bad') ? `🔥 明天頭條：${secT}` : outs.some(o=>o==='ok'||o==='chaos') ? `😅 差一點就穿幫了：${secT}` : `🤫 幸好今天沒人發現：${secT}`;
   $('result').innerHTML=`
     <div class="mini">${g.idol.photo?`<img src="${g.idol.photo}" alt="">`:avatarSVG(g.idol)}</div>
     <div class="rname">${esc(g.name)}</div>
